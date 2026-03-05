@@ -25,6 +25,14 @@ export default function App() {
     setCount(count - 1)
   }
 
+  function double(){
+    if(count>0){
+      setCount(count*2);
+    }
+
+
+  }
+
   return (
     <div style={{padding:40}}>
       <h1>React Counter</h1>
@@ -35,9 +43,17 @@ export default function App() {
       <button onClick={increase}>
         Increase
       </button>
+
+{/*call decrease function when buttong is clicked */}
       <button onClick={decrease}>
         Decrease
       </button>
+    {/* double the value if positive */}
+<button onClick={double}>
+  Double
+</button>
+  
     </div>
+
   )
 }
