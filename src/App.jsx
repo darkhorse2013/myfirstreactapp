@@ -1,5 +1,6 @@
 //importing react state. React component, remembers values between renders
 import { useState } from "react";
+import "./App.css";
 
 export default function App() {
   // this means count → stored value
@@ -32,12 +33,20 @@ export default function App() {
     setCount(0);
   }
 
+  function getCountClass() {
+    if (count > 10) {
+      return "warning";
+    }
+
+    return "normal";
+  }
+
   //return is what gets displayed on DOM
   return (
     <div style={{ padding: 40 }}>
       <h1>React Counter</h1>
 
-      <p>Count: {count}</p>
+      <p className={getCountClass()}>Count: {count}</p>
 
       {/*call function when button is clicked */}
       <button onClick={increase}>Increase</button>
