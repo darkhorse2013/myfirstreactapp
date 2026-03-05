@@ -2,58 +2,51 @@
 import { useState } from "react";
 
 export default function App() {
+  // this means count → stored value
+  //setCount → function to change it
+  //0 → starting value
+  //setCount built in react function to rerender component automatically
+  //state changed
+  //rerender component
+  //update UI
 
+  const [count, setCount] = useState(0);
 
-// this means count → stored value
-//setCount → function to change it
-//0 → starting value
-//setCount built in react function to rerender component automatically
-//state changed
-//rerender component
-//update UI
-
-  const [count, setCount] = useState(0)
-
-
- //this is the function which increases the count
+  //this is the function which increases the count
   function increase() {
-    setCount(count + 1)
+    setCount(count + 1);
   }
 
   //this is the function which decreases the count
   function decrease() {
-    setCount(count - 1)
+    setCount(count - 1);
   }
 
-  function double(){
-    if(count>0){
-      setCount(count*2);
+  function double() {
+    if (count > 0) {
+      setCount(count * 2);
     }
-
-
   }
 
+  function reset() {
+    setCount(0);
+  }
+
+  //return is what gets displayed on DOM
   return (
-    <div style={{padding:40}}>
+    <div style={{ padding: 40 }}>
       <h1>React Counter</h1>
 
       <p>Count: {count}</p>
 
-{/*call function when button is clicked */}
-      <button onClick={increase}>
-        Increase
-      </button>
+      {/*call function when button is clicked */}
+      <button onClick={increase}>Increase</button>
 
-{/*call decrease function when buttong is clicked */}
-      <button onClick={decrease}>
-        Decrease
-      </button>
-    {/* double the value if positive */}
-<button onClick={double}>
-  Double
-</button>
-  
+      {/*call decrease function when buttong is clicked */}
+      <button onClick={decrease}>Decrease</button>
+      {/* double the value if positive */}
+      <button onClick={double}>Double</button>
+      <button onClick={reset}>Reset Count</button>
     </div>
-
-  )
+  );
 }
